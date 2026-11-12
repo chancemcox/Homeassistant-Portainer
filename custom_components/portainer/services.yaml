@@ -1,0 +1,11 @@
+start_container:
+  name: Start Portainer container
+  description: Ensure the managed Portainer container is created and running.
+
+stop_container:
+  name: Stop Portainer container
+  description: Stop the managed Portainer container.
+
+restart_container:
+  name: Restart Portainer container
+  description: Stop and start the managed Portainer container.
