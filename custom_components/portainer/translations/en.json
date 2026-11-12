@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up Portainer",
+        "description": "Home Assistant will pull and run Portainer CE via the Docker engine. The Docker socket must be reachable from Home Assistant (for example by mounting /var/run/docker.sock).",
+        "data": {
+          "docker_host": "Docker host URL",
+          "container_name": "Container name",
+          "image": "Container image",
+          "port": "HTTP port",
+          "ssl_port": "HTTPS port",
+          "volume_name": "Data volume name",
+          "ui_url": "Portainer UI URL (browser)",
+          "stop_on_unload": "Stop container when integration is removed"
+        },
+        "data_description": {
+          "docker_host": "Usually unix://var/run/docker.sock when the Docker socket is mounted into Home Assistant.",
+          "container_name": "Name of the Docker container managed by this integration.",
+          "image": "Portainer image tag to pull and run.",
+          "port": "Host port published for Portainer HTTP (container port 9000).",
+          "ssl_port": "Host port published for Portainer HTTPS (container port 9443).",
+          "volume_name": "Docker volume used for Portainer persistent data.",
+          "ui_url": "URL opened by the sidebar panel in your browser. Defaults to http://homeassistant.local:<port>.",
+          "stop_on_unload": "When enabled, Portainer is stopped if you remove the integration."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to connect to the Docker engine. Confirm the socket/URL is reachable from Home Assistant.",
+      "invalid_ui_url": "Enter a valid http:// or https:// URL for the Portainer UI.",
+      "unknown": "Unexpected error. Check the Home Assistant logs for details."
+    },
+    "abort": {
+      "already_configured": "Portainer is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Portainer options",
+        "description": "Update how Portainer is published and which URL the sidebar opens.",
+        "data": {
+          "ui_url": "Portainer UI URL (browser)",
+          "port": "HTTP port",
+          "ssl_port": "HTTPS port",
+          "image": "Container image",
+          "stop_on_unload": "Stop container when integration is removed"
+        },
+        "data_description": {
+          "ui_url": "URL opened by the sidebar panel in your browser.",
+          "port": "Host port published for Portainer HTTP.",
+          "ssl_port": "Host port published for Portainer HTTPS.",
+          "image": "Portainer image tag to pull and run.",
+          "stop_on_unload": "When enabled, Portainer is stopped if you remove the integration."
+        }
+      }
+    },
+    "error": {
+      "invalid_ui_url": "Enter a valid http:// or https:// URL for the Portainer UI."
+    }
+  }
+}
